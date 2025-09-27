@@ -1,7 +1,7 @@
 # GitHub Pages Configuration for FilmMeter
 title: FilmMeter
 description: Professional iOS Light Meter for Film Photography
-url: "https://zacharyhou.github.io"
+url: "https://vurtnec.github.io"
 baseurl: "/filmmeter-website"
 
 # Theme
@@ -30,7 +30,7 @@ author:
   email: contact@filmmeter.app
 
 # Social links
-github_username: zacharyhou
+github_username: vurtnec
 
 # Build settings
 show_excerpts: false
