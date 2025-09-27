@@ -1,0 +1,246 @@
+---
+---
+
+@import "minima";
+
+// FilmMeter Custom Theme - Red, Black, White Darkroom Aesthetic
+
+// Color Variables
+$filmmeter-red: #dc2626;      // Primary red
+$filmmeter-dark-red: #b91c1c; // Darker red for hover states
+$filmmeter-black: #000000;    // Pure black
+$filmmeter-white: #ffffff;    // Pure white
+$filmmeter-gray: #374151;     // Dark gray for secondary text
+$filmmeter-light-gray: #f9fafb; // Very light gray for backgrounds
+
+// Override default minima colors
+$brand-color: $filmmeter-red;
+$text-color: $filmmeter-black;
+$background-color: $filmmeter-white;
+$grey-color: $filmmeter-gray;
+$grey-color-light: $filmmeter-light-gray;
+
+// Header styling
+.site-header {
+  background-color: $filmmeter-black;
+  border-bottom: 2px solid $filmmeter-red;
+
+  .site-title {
+    color: $filmmeter-white !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $filmmeter-red !important;
+      text-decoration: none;
+    }
+  }
+
+  .site-nav {
+    .page-link {
+      color: $filmmeter-white;
+      font-weight: 500;
+
+      &:hover {
+        color: $filmmeter-red;
+        text-decoration: none;
+      }
+    }
+
+    .menu-icon {
+      > svg {
+        fill: $filmmeter-white;
+      }
+    }
+  }
+}
+
+// Main content styling
+.page-content {
+  background-color: $filmmeter-white;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $filmmeter-black;
+    font-weight: 700;
+  }
+
+  h1 {
+    color: $filmmeter-red;
+    border-bottom: 2px solid $filmmeter-red;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: $filmmeter-red;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: $filmmeter-black;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+// Links
+a {
+  color: $filmmeter-red;
+
+  &:hover {
+    color: $filmmeter-dark-red;
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $filmmeter-dark-red;
+  }
+}
+
+// Feature sections
+.feature-section {
+  background-color: $filmmeter-light-gray;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-left: 4px solid $filmmeter-red;
+
+  h4 {
+    color: $filmmeter-red;
+    margin-bottom: 1rem;
+  }
+}
+
+// Code blocks (for technical content)
+pre, code {
+  background-color: $filmmeter-black;
+  color: $filmmeter-white;
+  border: 1px solid $filmmeter-gray;
+}
+
+code {
+  color: $filmmeter-red;
+  background-color: $filmmeter-light-gray;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid $filmmeter-red;
+  background-color: $filmmeter-light-gray;
+  padding: 1rem;
+  font-style: italic;
+  color: $filmmeter-gray;
+}
+
+// Footer
+.site-footer {
+  background-color: $filmmeter-black;
+  color: $filmmeter-white;
+  border-top: 2px solid $filmmeter-red;
+
+  .footer-heading {
+    color: $filmmeter-white;
+  }
+
+  .contact-list, .social-media-list {
+    li a {
+      color: $filmmeter-white;
+
+      &:hover {
+        color: $filmmeter-red;
+      }
+    }
+  }
+
+  .footer-col-wrapper {
+    color: $filmmeter-white;
+  }
+}
+
+// Buttons and interactive elements
+.btn {
+  background-color: $filmmeter-red;
+  color: $filmmeter-white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $filmmeter-dark-red;
+    color: $filmmeter-white;
+    text-decoration: none;
+  }
+}
+
+// Custom utility classes
+.text-red {
+  color: $filmmeter-red !important;
+}
+
+.text-black {
+  color: $filmmeter-black !important;
+}
+
+.bg-red {
+  background-color: $filmmeter-red !important;
+}
+
+.bg-black {
+  background-color: $filmmeter-black !important;
+}
+
+.border-red {
+  border-color: $filmmeter-red !important;
+}
+
+// Home page specific styling
+.home {
+  .post-list {
+    li {
+      border-bottom: 1px solid $filmmeter-light-gray;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 600px) {
+  .site-header {
+    .site-title {
+      font-size: 1.25rem;
+    }
+  }
+
+  .page-content {
+    padding: 1rem 0;
+  }
+
+  .feature-section {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+}
+
+// Print styles
+@media print {
+  .site-header, .site-footer {
+    display: none;
+  }
+
+  .page-content {
+    background-color: white;
+    color: black;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}
