@@ -1,0 +1,52 @@
+# GitHub Pages Configuration for FilmMeter
+title: FilmMeter
+description: Professional iOS Light Meter for Film Photography - AI-powered scene detection, LiDAR integration, reciprocity compensation, and comprehensive film stock database for 35mm and medium format.
+url: "https://vurtnec.github.io"
+baseurl: "/filmmeter-website"
+lang: en
+
+# Theme
+theme: minima
+markdown: kramdown
+highlighter: rouge
+
+# Custom CSS
+sass:
+  sass_dir: assets/css
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation
+header_pages:
+  - index.md
+  - privacy-policy.md
+  - support.md
+
+# Author information
+author:
+  name: Zachary Hou
+  email: contact@filmmeter.app
+
+# Social links
+github_username: vurtnec
+
+# SEO Configuration
+logo: /assets/images/filmmeter-logo.png
+twitter:
+  card: summary_large_image
+social:
+  name: FilmMeter
+  links:
+    - https://github.com/vurtnec/filmmeter-website
+
+# Include additional files for SEO
+include:
+  - robots.txt
+  - llms.txt
+
+# Build settings
+show_excerpts: false

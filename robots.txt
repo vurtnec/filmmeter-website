@@ -1,0 +1,36 @@
+# FilmMeter Website - robots.txt
+# https://vurtnec.github.io/filmmeter-website/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vurtnec.github.io/filmmeter-website/sitemap.xml
+
+# Allow AI/LLM crawlers explicitly
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Crawl delay for politeness
+Crawl-delay: 1

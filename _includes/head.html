@@ -1,0 +1,166 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="film photography, light meter, iOS app, exposure calculator, film stocks, medium format, 35mm, 120 film, CoreML, LiDAR, reciprocity, depth of field, rangefinder">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} | {{ site.title }}{% else %}{{ site.title }} - Professional iOS Light Meter{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description | escape }}{% endif %}">
+  <meta property="og:image" content="{{ '/assets/images/filmmeter-og-image.png' | absolute_url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ page.url | absolute_url }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description | escape }}{% endif %}">
+  <meta name="twitter:image" content="{{ '/assets/images/filmmeter-og-image.png' | absolute_url }}">
+
+  <!-- App-specific meta -->
+  <meta name="application-name" content="FilmMeter">
+  <meta name="apple-mobile-web-app-title" content="FilmMeter">
+
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FilmMeter",
+    "url": "{{ site.url }}{{ site.baseurl }}",
+    "logo": "{{ '/assets/images/filmmeter-logo.png' | absolute_url }}",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "{{ site.author.email }}",
+      "contactType": "customer support"
+    }
+  }
+  </script>
+
+  <!-- Structured Data - SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FilmMeter",
+    "description": "Professional iOS Light Meter for Film Photography with AI-powered scene detection, LiDAR integration, reciprocity compensation, and comprehensive film stock database.",
+    "applicationCategory": "PhotographyApplication",
+    "operatingSystem": "iOS 15.0+",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author.name }}"
+    },
+    "featureList": [
+      "Precision light metering with 1/3, 1/2, and full stop increments",
+      "Custom ML-powered scene detection with automatic exposure compensation",
+      "Reciprocity failure compensation for long exposures",
+      "LiDAR distance measurement for depth of field calculations",
+      "Rangefinder-style focus assist",
+      "Visual depth of field scale",
+      "Comprehensive film stock database including Portra, CineStill, Phoenix",
+      "120 medium format support with 6x4.5, 6x6, 6x7, 6x9 configurations",
+      "Film counter with Rollei and Leica styles",
+      "CSV export with full metadata",
+      "Film roll management and inventory tracking",
+      "Metering history with location data"
+    ]
+  }
+  </script>
+
+  {% if page.layout == 'page' and page.title == 'Support' %}
+  <!-- Structured Data - FAQPage for Support -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What devices support FilmMeter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FilmMeter requires iOS 15.0 or later. For full functionality including LiDAR distance measurement, we recommend iPhone 12 Pro or later."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does FilmMeter need camera access?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Camera access is essential for FilmMeter's core functionality - reading light levels to calculate proper exposure settings. All processing is done locally on your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use FilmMeter without an internet connection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! FilmMeter works completely offline. All calculations and scene detection are performed locally on your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the scene detection work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FilmMeter uses a hybrid approach combining histogram analysis with Apple's CoreML framework and our custom-trained machine learning model for intelligent scene recognition, all processed locally on your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What film stocks are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FilmMeter includes a comprehensive database of popular films including Kodak Portra (160, 400, 800), Ektar 100, CineStill 800T, Phoenix 200, Ilford HP5+, and many more with automatic exposure compensation and reciprocity curves."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export my metering data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! FilmMeter supports CSV export with full metadata including roll name, format, film stock, status, dates, and personal notes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What film formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FilmMeter supports 135 (35mm) and 120 (medium format) film with accurate frame counters. For 120 format, we support 6x4.5, 6x6, 6x7, and 6x9 frame configurations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the reciprocity compensation work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For long exposures beyond 1 second, film loses sensitivity due to reciprocity failure. FilmMeter automatically calculates the corrected exposure time based on each film stock's unique reciprocity characteristics."
+        }
+      }
+    ]
+  }
+  </script>
+  {% endif %}
+
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+</head>

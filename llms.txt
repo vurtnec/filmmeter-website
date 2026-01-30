@@ -1,0 +1,71 @@
+# FilmMeter - Professional iOS Light Meter for Film Photography
+
+> FilmMeter is a professional-grade light meter app for iPhone that combines cutting-edge machine learning with the timeless art of film photography.
+
+## About FilmMeter
+
+FilmMeter is an iOS application designed for film photographers who demand precision. It uses iPhone's advanced camera sensors to provide accurate exposure readings calibrated specifically for film characteristics. All processing happens locally on-device using custom-trained CoreML models.
+
+## Key Features
+
+### Metering & Exposure
+- **Precision Metering**: Real-time exposure measurement with 1/3, 1/2, and full stop increments
+- **Intelligent Scene Detection**: Custom-trained ML model with histogram analysis for automatic exposure compensation
+- **Reciprocity Compensation**: Automatic long exposure correction based on each film stock's reciprocity failure characteristics
+
+### Focus & Distance
+- **LiDAR Integration**: Distance measurement for depth of field calculations (iPhone 12 Pro+)
+- **Rangefinder Focus**: Classic split-image focusing experience inspired by Leica rangefinders
+- **Depth of Field Scale**: Visual DOF calculator with format-specific circle of confusion
+
+### Film Management
+- **Film Stock Database**: Comprehensive database including Portra 800, CineStill 800T, Phoenix 200, Ektar, HP5+, and more
+- **Film Roll Management**: Track rolls, exposures, and film inventory
+- **Film Counter**: Rollei/Leica-style frame counter for 135 and 120 formats
+- **Medium Format Support**: Full 120 format support with 6x4.5, 6x6, 6x7, 6x9 configurations
+
+### Data & Export
+- **Metering History**: Session records with location data and photo attachments
+- **CSV Export**: Export complete metering history with full metadata
+
+## Technical Requirements
+
+- iOS 15.0 or later
+- iPhone 12 Pro or later recommended for LiDAR features
+- Camera access required
+- Location services optional
+- Approximately 50MB storage
+
+## Core Technologies
+
+- AVFoundation for professional camera sensor access
+- ARKit & LiDAR for precise distance measurement
+- CoreML & Vision for on-device scene recognition
+- SwiftUI for native iOS interface
+- SwiftData for local data persistence
+
+## Privacy
+
+FilmMeter processes all data locally on your device. No personal information, photos, or metering data is collected or transmitted to external servers. The custom-trained ML model runs entirely on-device using Apple's CoreML framework.
+
+## Design Philosophy
+
+FilmMeter embraces the aesthetic and principles of traditional darkroom photography with a minimalist red-black-white color scheme. The interface follows Apple's Human Interface Guidelines while incorporating the tactile, deliberate nature of film photography.
+
+## Links
+
+- Website: https://vurtnec.github.io/filmmeter-website/
+- Privacy Policy: https://vurtnec.github.io/filmmeter-website/privacy-policy/
+- Support & FAQ: https://vurtnec.github.io/filmmeter-website/support/
+
+## Contact
+
+- General: contact@filmmeter.app
+- Support: support@filmmeter.app
+- Feature Requests: features@filmmeter.app
+- Privacy: privacy@filmmeter.app
+
+## Developer
+
+Created by Zachary Hou
+GitHub: https://github.com/vurtnec
