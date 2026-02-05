@@ -1,0 +1,265 @@
+---
+layout: default
+---
+
+{% assign film = nil %}
+{% for f in site.data.film_stocks %}
+  {% if f.id == page.film_id %}
+    {% assign film = f %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if film %}
+
+<!-- Structured Data (JSON-LD Product Schema) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ film.name }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ film.manufacturer }}"
+  },
+  "description": "{{ film.description_en | default: film.name }} - ISO {{ film.iso }} {{ film.film_type }} film processed in {{ film.process }}.",
+  "category": "Film Stock",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "ISO",
+      "value": "{{ film.iso }}"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Film Type",
+      "value": "{{ film.film_type }}"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Process",
+      "value": "{{ film.process }}"
+    }
+  ]
+}
+</script>
+
+<div class="film-stock-page">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <span class="separator">/</span>
+    <a href="{{ '/film-stocks/' | relative_url }}">Film Stocks</a>
+    <span class="separator">/</span>
+    <span>{{ film.name }}</span>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="film-stock-hero">
+    <div class="brand-accent-bar" {% if film.brand_color %}style="background-color: {{ film.brand_color }};" {% endif %}></div>
+    <div class="film-stock-hero-content">
+      <p class="film-manufacturer">{{ film.manufacturer }}</p>
+      <h1 class="film-stock-title">{{ film.name }}</h1>
+    </div>
+  </div>
+
+  <!-- Meta Badges -->
+  <div class="film-meta-badges">
+    <span class="badge badge-iso">ISO {{ film.iso }}</span>
+    {% if film.film_type == "Color Negative" %}
+      <span class="badge badge-type badge-color-neg">{{ film.film_type }}</span>
+    {% elsif film.film_type == "Color Reversal" or film.film_type == "Color Slide" %}
+      <span class="badge badge-type badge-color-rev">{{ film.film_type }}</span>
+    {% elsif film.film_type == "Black & White" or film.film_type == "B&W" %}
+      <span class="badge badge-type badge-bw">{{ film.film_type }}</span>
+    {% elsif film.film_type == "Motion Picture" %}
+      <span class="badge badge-type badge-motion">{{ film.film_type }}</span>
+    {% else %}
+      <span class="badge badge-type">{{ film.film_type }}</span>
+    {% endif %}
+    <span class="badge badge-process">{{ film.process }}</span>
+  </div>
+
+  <!-- Description Section -->
+  <div class="film-description">
+    {% if film.description_en %}
+    <div class="description-en">
+      <p>{{ film.description_en }}</p>
+    </div>
+    {% endif %}
+    {% if film.description_zh %}
+    <div class="description-zh" lang="zh-Hans">
+      <p>{{ film.description_zh }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Specs Grid -->
+  <div class="film-specs-grid">
+    <h2>Specifications</h2>
+    <div class="specs-grid">
+      <div class="spec-item">
+        <span class="spec-label">ISO</span>
+        <span class="spec-value">{{ film.iso }}</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Type</span>
+        <span class="spec-value">{{ film.film_type }}</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Process</span>
+        <span class="spec-value">{{ film.process }}</span>
+      </div>
+      {% if film.brand_color %}
+      <div class="spec-item">
+        <span class="spec-label">Brand Color</span>
+        <span class="spec-value">
+          <span class="color-swatch" style="background-color: {{ film.brand_color }};" title="{{ film.brand_color }}"></span>
+          <code>{{ film.brand_color }}</code>
+        </span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Reciprocity Failure Data -->
+  {% if film.reciprocity_data %}
+  <div class="film-reciprocity" id="reciprocity">
+    <h2>Reciprocity Failure Compensation</h2>
+
+    <p class="reciprocity-intro">
+      Long exposures require compensation for reciprocity failure. Use these values as a starting point when shooting with {{ film.name }}.
+      For more details, see our <a href="{{ '/guides/reciprocity/' | relative_url }}">Reciprocity Failure Guide</a>.
+      FilmMeter's <a href="{{ '/features/light-metering/' | relative_url }}">Light Metering</a> feature can automatically apply these corrections.
+    </p>
+
+    <!-- Data Source Badge -->
+    {% if film.reciprocity_data_source == "official" %}
+      <span class="badge badge-source badge-source-official">Official Data</span>
+    {% elsif film.reciprocity_data_source == "community" %}
+      <span class="badge badge-source badge-source-community">Community Data</span>
+    {% else %}
+      <span class="badge badge-source badge-source-estimated">Estimated Data</span>
+    {% endif %}
+
+    {% if film.reciprocity_factor %}
+    <div class="reciprocity-formula">
+      <h3>Ilford P Factor Formula</h3>
+      <p>This film uses the Ilford reciprocity formula: <strong>Corrected Time = Metered Time<sup>P</sup></strong>, where <strong>P = {{ film.reciprocity_factor }}</strong>.</p>
+    </div>
+    {% endif %}
+
+    <div class="reciprocity-table-wrapper">
+      <table class="reciprocity-table">
+        <thead>
+          <tr>
+            <th>Metered Time</th>
+            <th>Corrected Time</th>
+            <th>Difference (approx.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in film.reciprocity_data %}
+          <tr>
+            <td>
+              {% if entry.measured >= 60 %}
+                {% assign metered_min = entry.measured | divided_by: 60 %}
+                {% assign metered_sec = entry.measured | modulo: 60 %}
+                {{ metered_min }}m {{ metered_sec }}s
+              {% else %}
+                {{ entry.measured }}s
+              {% endif %}
+            </td>
+            <td>
+              {% if entry.corrected >= 60 %}
+                {% assign corrected_min = entry.corrected | divided_by: 60 %}
+                {% assign corrected_sec = entry.corrected | modulo: 60 %}
+                {{ corrected_min }}m {{ corrected_sec }}s
+              {% else %}
+                {{ entry.corrected }}s
+              {% endif %}
+            </td>
+            <td>
+              {% if entry.stops %}
+                ~{{ entry.stops }} stops
+              {% else %}
+                {% assign ratio = entry.corrected | times: 100 | divided_by: entry.measured %}
+                {{ ratio | divided_by: 100 }}.{{ ratio | modulo: 100 }}x
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% if film.reciprocity_note %}
+    <p class="reciprocity-note"><em>{{ film.reciprocity_note }}</em></p>
+    {% endif %}
+
+    {% if film.reciprocity_data_source == "official" %}
+    <p class="source-note">Data sourced from official manufacturer documentation.</p>
+    {% elsif film.reciprocity_data_source == "community" %}
+    <p class="source-note">Data sourced from community testing and published results. Use as a starting point and bracket exposures for critical work.</p>
+    {% else %}
+    <p class="source-note">Data estimated based on similar film stocks. Bracket your exposures for best results.</p>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Page Content (from markdown body) -->
+  {% if content != "" %}
+  <div class="film-stock-content">
+    {{ content }}
+  </div>
+  {% endif %}
+
+  <!-- Related Films -->
+  <div class="related-films">
+    <h2>Related Film Stocks</h2>
+    <div class="related-films-grid">
+      {% assign related_count = 0 %}
+      {% for related in site.data.film_stocks %}
+        {% if related.id != film.id and related.film_type == film.film_type and related_count < 3 %}
+          <a href="{{ '/film-stocks/' | append: related.slug | append: '/' | relative_url }}" class="related-film-card">
+            <div class="related-film-accent" {% if related.brand_color %}style="background-color: {{ related.brand_color }};" {% endif %}></div>
+            <h3>{{ related.name }}</h3>
+            <p class="related-film-meta">{{ related.manufacturer }} &middot; ISO {{ related.iso }}</p>
+          </a>
+          {% assign related_count = related_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+      {% if related_count == 0 %}
+        <p>No related film stocks found. <a href="{{ '/film-stocks/' | relative_url }}">Browse all film stocks</a>.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- App CTA Banner -->
+  <div class="app-cta-banner">
+    <h3>Shoot {{ film.name }} with Confidence</h3>
+    <p>FilmMeter provides real-time light metering, automatic reciprocity compensation, and film roll management for {{ film.name }} and 40+ other film stocks.</p>
+    <a href="#" class="btn btn-primary btn-large">Download on App Store</a>
+  </div>
+
+</div>
+
+{% else %}
+
+<div class="film-stock-page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <span class="separator">/</span>
+    <a href="{{ '/film-stocks/' | relative_url }}">Film Stocks</a>
+    <span class="separator">/</span>
+    <span>Not Found</span>
+  </nav>
+  <div class="film-stock-hero">
+    <h1>Film Stock Not Found</h1>
+    <p>The requested film stock data could not be loaded. Please check the <code>film_id</code> in the page front matter matches an entry in <code>_data/film_stocks.yml</code>.</p>
+    <a href="{{ '/film-stocks/' | relative_url }}" class="btn btn-primary">Browse All Film Stocks</a>
+  </div>
+</div>
+
+{% endif %}

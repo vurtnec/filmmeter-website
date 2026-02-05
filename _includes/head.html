@@ -81,6 +81,129 @@
   }
   </script>
 
+  {% if page.layout == 'film-stock' %}
+  <!-- Structured Data - Film Stock Product -->
+  {% assign film = nil %}
+  {% for f in site.data.film_stocks %}
+    {% if f.id == page.film_id %}
+      {% assign film = f %}
+    {% endif %}
+  {% endfor %}
+  {% if film %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{ film.full_name }}",
+    "brand": {
+      "@type": "Brand",
+      "name": "{{ film.manufacturer }}"
+    },
+    "description": "{{ film.description_en }} {{ film.description_zh }}",
+    "category": "Photographic Film",
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "ISO", "value": "{{ film.iso }}" },
+      { "@type": "PropertyValue", "name": "Film Type", "value": "{{ film.film_type }}" },
+      { "@type": "PropertyValue", "name": "Process", "value": "{{ film.process }}" }
+    ]
+  }
+  </script>
+  {% endif %}
+  <!-- BreadcrumbList for Film Stock -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+      { "@type": "ListItem", "position": 2, "name": "Film Stocks", "item": "{{ '/film-stocks/' | absolute_url }}" },
+      { "@type": "ListItem", "position": 3, "name": "{{ page.title }}" }
+    ]
+  }
+  </script>
+  {% endif %}
+
+  {% if page.layout == 'feature' %}
+  <!-- Structured Data - Feature Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page.description | escape }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author.name }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FilmMeter",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ '/assets/images/filmmeter-logo.png' | absolute_url }}"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}"
+    }
+  }
+  </script>
+  <!-- BreadcrumbList for Feature -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+      { "@type": "ListItem", "position": 2, "name": "Features", "item": "{{ '/features/' | absolute_url }}" },
+      { "@type": "ListItem", "position": 3, "name": "{{ page.title }}" }
+    ]
+  }
+  </script>
+  {% endif %}
+
+  {% if page.url contains '/guides/' and page.url != '/guides/' %}
+  <!-- Structured Data - Guide Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page.description | escape }}",
+    "articleSection": "Photography Guides",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author.name }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FilmMeter",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ '/assets/images/filmmeter-logo.png' | absolute_url }}"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}"
+    }
+  }
+  </script>
+  <!-- BreadcrumbList for Guide -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "{{ '/guides/' | absolute_url }}" },
+      { "@type": "ListItem", "position": 3, "name": "{{ page.title }}" }
+    ]
+  }
+  </script>
+  {% endif %}
+
   {% if page.layout == 'page' and page.title == 'Support' %}
   <!-- Structured Data - FAQPage for Support -->
   <script type="application/ld+json">

@@ -1,0 +1,567 @@
+# Film Stock Database for FilmMeter
+# Extracted from FilmMeter iOS app's FilmStock.swift
+# 21 built-in film stocks with reciprocity data
+
+# ==========================================
+# COLOR NEGATIVE FILMS (13)
+# ==========================================
+
+- id: "p400-style"
+  slug: "kodak-portra-400"
+  full_name: "Kodak Portra 400"
+  manufacturer: "Kodak"
+  iso: 400
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#C4956A"
+  description_en: "Warm portrait style with soft tones and natural skin rendering"
+  description_zh: "温暖人像风格，柔和色调，自然肤色还原"
+  characteristics_en: "Warm tones, soft contrast"
+  characteristics_zh: "温暖色调，柔和对比度"
+  reciprocity_factor: 1.30
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "community"
+  reciprocity_source_url: "https://www.brucepercy.co.uk/blog/2023/7/9/kodak-portra-reciprocity-times"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 4
+      corrected: 6
+    - measured: 5
+      corrected: 8
+    - measured: 6
+      corrected: 10
+    - measured: 8
+      corrected: 15
+    - measured: 10
+      corrected: 20
+    - measured: 20
+      corrected: 51
+    - measured: 40
+      corrected: 131
+    - measured: 60
+      corrected: 227
+    - measured: 120
+      corrected: 580
+
+- id: "p160-style"
+  slug: "kodak-portra-160"
+  full_name: "Kodak Portra 160"
+  manufacturer: "Kodak"
+  iso: 160
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#D4B896"
+  description_en: "Low ISO style with fine grain and natural color palette"
+  description_zh: "低感光度风格，细腻质感，自然色彩表现"
+  characteristics_en: "Fine grain, natural colors"
+  characteristics_zh: "细腻质感，自然色彩"
+  reciprocity_factor: 1.30
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "community"
+  reciprocity_source_url: "https://www.largeformatphotography.info/forum/showthread.php?106441"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 4
+      corrected: 6
+    - measured: 5
+      corrected: 8
+    - measured: 6
+      corrected: 10
+    - measured: 8
+      corrected: 15
+    - measured: 10
+      corrected: 20
+    - measured: 20
+      corrected: 51
+    - measured: 40
+      corrected: 131
+    - measured: 60
+      corrected: 227
+    - measured: 120
+      corrected: 580
+
+- id: "p800-style"
+  slug: "kodak-portra-800"
+  full_name: "Kodak Portra 800"
+  manufacturer: "Kodak"
+  iso: 800
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#B8866B"
+  description_en: "High-speed color negative with vivid saturation, lifelike skin tones and pleasant organic grain texture"
+  description_zh: "高速彩色负片，色彩饱和鲜明，肤色还原自然真实，颗粒感有机讨喜"
+  characteristics_en: "Vivid colors, organic grain"
+  characteristics_zh: "鲜明色彩，有机颗粒"
+  reciprocity_factor: null
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "none"
+  reciprocity_data: []
+
+- id: "g200-style"
+  slug: "kodak-gold-200"
+  full_name: "Kodak Gold 200"
+  manufacturer: "Kodak"
+  iso: 200
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#D4A84B"
+  description_en: "Vibrant style with warm golden tones and rich colors"
+  description_zh: "鲜艳风格，温暖金黄色调，丰富色彩"
+  characteristics_en: "Vibrant colors, golden highlights"
+  characteristics_zh: "鲜艳色彩，金黄高光"
+  reciprocity_factor: null
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "none"
+  reciprocity_data: []
+
+- id: "color-plus-style"
+  slug: "kodak-colorplus-200"
+  full_name: "Kodak ColorPlus 200"
+  manufacturer: "Kodak"
+  iso: 200
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#8B4789"
+  description_en: "Budget-friendly everyday style with warm tones and vibrant colors"
+  description_zh: "经济实惠的日常风格，温暖色调，色彩鲜艳"
+  characteristics_en: "Warm tones, good saturation"
+  characteristics_zh: "温暖色调，饱和度好"
+  reciprocity_factor: null
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "none"
+  reciprocity_data: []
+
+- id: "um400-style"
+  slug: "kodak-ultramax-400"
+  full_name: "Kodak UltraMax 400"
+  manufacturer: "Kodak"
+  iso: 400
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#4A7CC4"
+  description_en: "Versatile everyday color style with warm tones"
+  description_zh: "多用途日常彩色风格，温暖色调"
+  characteristics_en: "Versatile, warm tones"
+  characteristics_zh: "多用途，温暖色调"
+  reciprocity_factor: null
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "none"
+  reciprocity_data: []
+
+- id: "ek100-style"
+  slug: "kodak-ektar-100"
+  full_name: "Kodak Ektar 100"
+  manufacturer: "Kodak"
+  iso: 100
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#C45C4A"
+  description_en: "Ultra-fine grain style with exceptional sharpness"
+  description_zh: "超细颗粒风格，卓越锐度"
+  characteristics_en: "Ultra-fine grain, high sharpness"
+  characteristics_zh: "超细颗粒，高锐度"
+  reciprocity_factor: 1.30
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "community"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 4
+      corrected: 5
+    - measured: 8
+      corrected: 10
+    - measured: 15
+      corrected: 22
+    - measured: 30
+      corrected: 48
+    - measured: 60
+      corrected: 105
+    - measured: 120
+      corrected: 235
+
+- id: "superia-style"
+  slug: "fujifilm-superia-400"
+  full_name: "Fujifilm Superia X-TRA 400"
+  manufacturer: "Fujifilm"
+  iso: 400
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#00A650"
+  description_en: "Versatile consumer color negative with fine grain, wide dynamic range, and signature Fujifilm cool tones with slight green tendency"
+  description_zh: "多功能消费级彩色负片，颗粒细腻，动态范围宽广，富士标志性冷调偏绿色彩风格"
+  characteristics_en: "Fine grain, cool tones"
+  characteristics_zh: "细腻颗粒，冷调风格"
+  reciprocity_factor: null
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "none"
+  reciprocity_data: []
+
+- id: "cinestill-800t-style"
+  slug: "cinestill-800t"
+  full_name: "CineStill 800T"
+  manufacturer: "CineStill"
+  iso: 800
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#00B4D8"
+  description_en: "Cinematic tungsten-balanced color negative with iconic halation glow around highlights"
+  description_zh: "电影感钨丝灯平衡彩色负片，高光处有标志性的光晕效果"
+  characteristics_en: "Cinematic tones, halation glow"
+  characteristics_zh: "电影色调，光晕效果"
+  reciprocity_factor: null
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "none"
+  reciprocity_data: []
+
+- id: "phoenix200-style"
+  slug: "harman-phoenix-200"
+  full_name: "Harman Phoenix 200"
+  manufacturer: "Harman"
+  iso: 200
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#C0392B"
+  description_en: "Experimental color negative with bold saturated colors, prominent grain, and distinctive red halation around highlights"
+  description_zh: "实验性彩色负片，色彩浓郁饱和，颗粒感明显，高光处有独特的红色光晕"
+  characteristics_en: "High contrast, red halation"
+  characteristics_zh: "高对比度，红色光晕"
+  reciprocity_factor: 1.35
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "community"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 4
+      corrected: 6
+    - measured: 8
+      corrected: 15
+    - measured: 15
+      corrected: 34
+    - measured: 30
+      corrected: 86
+    - measured: 60
+      corrected: 213
+    - measured: 120
+      corrected: 529
+
+- id: "lekai-c200-style"
+  slug: "lekai-c200"
+  full_name: "LeKai C200"
+  manufacturer: "LeKai"
+  iso: 200
+  film_type: "Color Negative"
+  process: "C-41"
+  brand_color: "#CC2936"
+  description_en: "Chinese classic color negative with soft, natural tones and a subtle vintage feel"
+  description_zh: "国产经典彩色负片，色调清淡自然，带有淡雅复古感"
+  characteristics_en: "Cool-green undertones, soft pastel palette, nostalgic rendering"
+  characteristics_zh: "偏冷绿色调，色彩柔和清淡，复古质感"
+  reciprocity_factor: null
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "none"
+  reciprocity_data: []
+
+- id: "5219-style"
+  slug: "kodak-5219-500t"
+  full_name: "Kodak Vision3 500T (5219)"
+  manufacturer: "Kodak"
+  iso: 500
+  film_type: "Color Negative"
+  process: "ECN-2"
+  brand_color: "#1C3A5F"
+  description_en: "High-speed tungsten-balanced cinema negative with fine grain, broad dynamic range, and extended highlight latitude via Dye Layering Technology"
+  description_zh: "高速钨丝灯平衡电影负片，颗粒细腻，宽广动态范围，染料分层技术带来出色的高光宽容度"
+  characteristics_en: "Fine grain, broad dynamic range, tungsten 3200K"
+  characteristics_zh: "细腻颗粒，宽广动态范围，钨丝灯3200K"
+  reciprocity_factor: 1.30
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "official"
+  reciprocity_source_url: "https://www.kodak.com/en/motion/product/camera-films/500t-5219-7219/"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 10
+      corrected: 20
+
+- id: "5207-style"
+  slug: "kodak-5207-250d"
+  full_name: "Kodak Vision3 250D (5207)"
+  manufacturer: "Kodak"
+  iso: 250
+  film_type: "Color Negative"
+  process: "ECN-2"
+  brand_color: "#D4A017"
+  description_en: "Daylight-balanced cinema negative with fine grain, extended highlight latitude, and outstanding performance in exposure extremes"
+  description_zh: "日光平衡电影负片，颗粒细腻，高光宽容度超过两档，极端曝光条件下仍有出色表现"
+  characteristics_en: "Fine grain, wide exposure latitude, daylight 5500K"
+  characteristics_zh: "细腻颗粒，宽广曝光宽容度，日光5500K"
+  reciprocity_factor: null
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "none"
+  reciprocity_data: []
+
+# ==========================================
+# BLACK & WHITE FILMS (3)
+# ==========================================
+
+- id: "h5-style"
+  slug: "ilford-hp5-plus"
+  full_name: "Ilford HP5 Plus 400"
+  manufacturer: "Ilford"
+  iso: 400
+  film_type: "Black & White"
+  process: "B&W"
+  brand_color: "#5B8A72"
+  description_en: "Classic monochrome style with high latitude and characteristic grain"
+  description_zh: "经典单色风格，高宽容度，特征颗粒"
+  characteristics_en: "Classic B&W, rich tones"
+  characteristics_zh: "经典黑白，丰富层次"
+  reciprocity_factor: 1.31
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "official"
+  reciprocity_source_url: "https://www.ilfordphoto.com/wp/wp-content/uploads/2024/05/Reciprocity-Failure-Compensation-v2.pdf"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 2
+      corrected: 2.5
+    - measured: 5
+      corrected: 8
+    - measured: 10
+      corrected: 20
+    - measured: 20
+      corrected: 51
+    - measured: 30
+      corrected: 85
+    - measured: 60
+      corrected: 210
+    - measured: 120
+      corrected: 525
+
+- id: "d400-style"
+  slug: "ilford-delta-400"
+  full_name: "Ilford Delta 400"
+  manufacturer: "Ilford"
+  iso: 400
+  film_type: "Black & White"
+  process: "B&W"
+  brand_color: "#4A4A4A"
+  description_en: "Modern monochrome style with fine grain and high sharpness"
+  description_zh: "现代单色风格，细腻颗粒，高清晰度"
+  characteristics_en: "Ultra-fine grain, high sharpness"
+  characteristics_zh: "极细颗粒，高清晰度"
+  reciprocity_factor: 1.41
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "official"
+  reciprocity_source_url: "https://www.ilfordphoto.com/wp/wp-content/uploads/2024/05/Reciprocity-Failure-Compensation-v2.pdf"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 2
+      corrected: 2.7
+    - measured: 5
+      corrected: 10
+    - measured: 10
+      corrected: 26
+    - measured: 20
+      corrected: 68
+    - measured: 30
+      corrected: 117
+    - measured: 60
+      corrected: 310
+    - measured: 120
+      corrected: 830
+
+- id: "d100-style"
+  slug: "ilford-delta-100"
+  full_name: "Ilford Delta 100"
+  manufacturer: "Ilford"
+  iso: 100
+  film_type: "Black & White"
+  process: "B&W"
+  brand_color: "#6B6B6B"
+  description_en: "Fine grain monochrome style with smooth tonality"
+  description_zh: "细颗粒单色风格，层次平滑"
+  characteristics_en: "Fine grain, smooth tones"
+  characteristics_zh: "细颗粒，平滑层次"
+  reciprocity_factor: 1.26
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "official"
+  reciprocity_source_url: "https://www.ilfordphoto.com/wp/wp-content/uploads/2024/05/Reciprocity-Failure-Compensation-v2.pdf"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 2
+      corrected: 2.4
+    - measured: 5
+      corrected: 7
+    - measured: 10
+      corrected: 18
+    - measured: 20
+      corrected: 44
+    - measured: 30
+      corrected: 70
+    - measured: 60
+      corrected: 168
+    - measured: 120
+      corrected: 403
+
+# ==========================================
+# REVERSAL / SLIDE FILMS (5)
+# ==========================================
+
+- id: "v50-style"
+  slug: "fujifilm-velvia-50"
+  full_name: "Fujifilm Velvia 50"
+  manufacturer: "Fujifilm"
+  iso: 50
+  film_type: "Reversal"
+  process: "E-6"
+  brand_color: "#2E8B57"
+  description_en: "Ultra-vivid slide film with extreme color saturation, deep contrast, and exceptional sharpness for landscapes"
+  description_zh: "超高饱和度反转片，色彩极度鲜艳，对比深沉强烈，风光摄影首选"
+  characteristics_en: "Extreme saturation, deep contrast"
+  characteristics_zh: "极致饱和，深沉对比"
+  reciprocity_factor: 1.30
+  reciprocity_threshold: 1.0
+  reciprocity_data_source: "official"
+  reciprocity_source_url: "https://asset.fujifilm.com/www/us/files/2020-03/64873257f4644939d7bd75d95600a561/AF3-960E.pdf"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 4
+      corrected: 5
+    - measured: 8
+      corrected: 11
+    - measured: 16
+      corrected: 25
+    - measured: 32
+      corrected: 64
+    - measured: 64
+      corrected: 160
+
+- id: "v100f-style"
+  slug: "fujifilm-velvia-100f"
+  full_name: "Fujifilm Velvia 100F"
+  manufacturer: "Fujifilm"
+  iso: 100
+  film_type: "Reversal"
+  process: "E-6"
+  brand_color: "#2E8B57"
+  description_en: "Vivid landscape style with high saturation and contrast"
+  description_zh: "高饱和度风景风格，色彩鲜艳对比强烈"
+  characteristics_en: "High saturation, vivid colors"
+  characteristics_zh: "高饱和度，鲜艳色彩"
+  reciprocity_factor: 1.30
+  reciprocity_threshold: 4.0
+  reciprocity_data_source: "community"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 4
+      corrected: 5
+    - measured: 8
+      corrected: 10
+    - measured: 16
+      corrected: 22
+    - measured: 32
+      corrected: 40
+    - measured: 64
+      corrected: 85
+
+- id: "provia100f-style"
+  slug: "fujifilm-provia-100f"
+  full_name: "Fujifilm Provia 100F"
+  manufacturer: "Fujifilm"
+  iso: 100
+  film_type: "Reversal"
+  process: "E-6"
+  brand_color: "#1A7A4C"
+  description_en: "Professional slide film with natural color reproduction, fine grain, and neutral tone balance"
+  description_zh: "专业反转片，色彩还原自然真实，颗粒细腻，色调中性平衡"
+  characteristics_en: "Natural colors, fine grain"
+  characteristics_zh: "自然色彩，细腻颗粒"
+  reciprocity_factor: 1.30
+  reciprocity_threshold: 128.0
+  reciprocity_data_source: "official"
+  reciprocity_source_url: "https://asset.fujifilm.com/master/emea/files/2020-10/2c27854d5609945fbe7e48afc61f815d/films_provia-100f_datasheet_01.pdf"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 8
+      corrected: 8
+    - measured: 32
+      corrected: 32
+    - measured: 64
+      corrected: 64
+    - measured: 128
+      corrected: 128
+    - measured: 180
+      corrected: 227
+    - measured: 240
+      corrected: 302
+    - measured: 360
+      corrected: 571
+    - measured: 480
+      corrected: 762
+
+- id: "e100g-style"
+  slug: "kodak-ektachrome-e100"
+  full_name: "Kodak Ektachrome E100"
+  manufacturer: "Kodak"
+  iso: 100
+  film_type: "Reversal"
+  process: "E-6"
+  brand_color: "#6B5B95"
+  description_en: "Classic slide film style with rich colors and contrast"
+  description_zh: "经典反转片风格，色彩丰富对比度高"
+  characteristics_en: "Rich colors, high contrast"
+  characteristics_zh: "丰富色彩，高对比度"
+  reciprocity_factor: 1.30
+  reciprocity_threshold: 10.0
+  reciprocity_data_source: "community"
+  reciprocity_source_url: "https://www.photrio.com/forum/threads/kodak-e100-reciprocity-failure-data.14900/"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 10
+      corrected: 10
+    - measured: 16
+      corrected: 18
+    - measured: 32
+      corrected: 42
+    - measured: 64
+      corrected: 100
+    - measured: 128
+      corrected: 240
+
+- id: "5294-style"
+  slug: "kodak-5294-100d"
+  full_name: "Kodak Ektachrome 100D (5294)"
+  manufacturer: "Kodak"
+  iso: 100
+  film_type: "Reversal (Cinema)"
+  process: "E-6"
+  brand_color: "#6B5B95"
+  description_en: "Daylight-balanced color reversal film with exceptional sharpness, moderately enhanced color saturation, and accurate flesh reproduction. Process E-6"
+  description_zh: "日光平衡彩色反转片，锐度卓越，色彩饱和度适度增强，肤色还原准确，E-6工艺冲洗"
+  characteristics_en: "Exceptional sharpness, vivid colors, E-6"
+  characteristics_zh: "卓越锐度，鲜明色彩，E-6工艺"
+  reciprocity_factor: 1.30
+  reciprocity_threshold: 10.0
+  reciprocity_data_source: "community"
+  reciprocity_data:
+    - measured: 1
+      corrected: 1
+    - measured: 10
+      corrected: 10
+    - measured: 16
+      corrected: 18
+    - measured: 32
+      corrected: 42
+    - measured: 64
+      corrected: 100
+    - measured: 128
+      corrected: 240

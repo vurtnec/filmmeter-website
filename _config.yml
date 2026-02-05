@@ -20,10 +20,26 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+# Collections
+collections:
+  film_stocks:
+    output: true
+    permalink: /film-stocks/:slug/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "film_stocks"
+    values:
+      layout: "film-stock"
+
 # Navigation
 header_pages:
   - index.md
-  - privacy-policy.md
+  - features.md
+  - film-stocks.md
+  - guides.md
   - support.md
 
 # Author information

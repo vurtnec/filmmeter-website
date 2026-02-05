@@ -19,14 +19,74 @@ FilmMeter is an iOS application designed for film photographers who demand preci
 - **Depth of Field Scale**: Visual DOF calculator with format-specific circle of confusion
 
 ### Film Management
-- **Film Stock Database**: Comprehensive database including Portra 800, CineStill 800T, Phoenix 200, Ektar, HP5+, and more
-- **Film Roll Management**: Track rolls, exposures, and film inventory
+- **Film Stock Database**: 21 built-in film stocks including Portra 400/160/800, Gold 200, CineStill 800T, Phoenix 200, Ektar 100, HP5+, Velvia 50, and more
+- **Film Roll Management**: Track rolls, exposures, and film inventory with photography notes
 - **Film Counter**: Rollei/Leica-style frame counter for 135 and 120 formats
 - **Medium Format Support**: Full 120 format support with 6x4.5, 6x6, 6x7, 6x9 configurations
 
 ### Data & Export
 - **Metering History**: Session records with location data and photo attachments
 - **CSV Export**: Export complete metering history with full metadata
+
+## Feature Pages
+
+- Light Metering: https://vurtnec.github.io/filmmeter-website/features/light-metering/
+  Precision light meter using iPhone camera sensors. Real-time exposure with 1/3, 1/2, full stop increments. Point and average metering modes. 测光表 曝光计算
+
+- LiDAR Rangefinder: https://vurtnec.github.io/filmmeter-website/features/lidar-rangefinder/
+  iPhone LiDAR distance measurement for film photography. ARKit-powered rangefinder with Leica-style UI. 测距 对焦距离 LiDAR
+
+- Depth of Field Calculator: https://vurtnec.github.io/filmmeter-website/features/depth-of-field/
+  Format-aware DOF calculator for 35mm and 120 medium format. Hyperfocal distance, circle of confusion. 景深计算器 超焦距
+
+- AI Scene Detection: https://vurtnec.github.io/filmmeter-website/features/scene-detection/
+  Hybrid histogram + Places365 ML scene recognition. Auto EV compensation, fully offline CoreML. 场景识别 AI测光
+
+- Film Roll Management: https://vurtnec.github.io/filmmeter-website/features/film-roll-management/
+  Photography notes and film roll tracking. Exposure records, GPS, CSV export. 摄影笔记 胶卷管理
+
+- Medium Format Support: https://vurtnec.github.io/filmmeter-website/features/medium-format/
+  120 film format: 6x4.5, 6x6, 6x7, 6x9, 6x17. Frame counter and DOF for medium format. 中画幅 120胶卷
+
+## Photography Guides
+
+- Reciprocity Failure Guide: https://vurtnec.github.io/filmmeter-website/guides/reciprocity/
+  Complete guide to reciprocity failure compensation for film photography. Formula method (Tc=Tm^P) and lookup tables for 21 film stocks. 倒易率 长曝光补偿
+
+- Exposure Triangle Guide: https://vurtnec.github.io/filmmeter-website/guides/exposure-triangle/
+  Aperture, shutter speed, and ISO relationship explained for film photographers. Film vs digital ISO differences. 曝光三角 光圈 快门 ISO
+
+## Film Stock Database
+
+Complete database of 21 film stocks with specifications, reciprocity data, and characteristics:
+https://vurtnec.github.io/filmmeter-website/film-stocks/
+
+### Color Negative Films
+- Kodak Portra 400: https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-portra-400/
+- Kodak Portra 160: https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-portra-160/
+- Kodak Portra 800: https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-portra-800/
+- Kodak Gold 200: https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-gold-200/
+- Kodak ColorPlus 200: https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-colorplus-200/
+- Kodak UltraMax 400: https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-ultramax-400/
+- Kodak Ektar 100: https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-ektar-100/
+- Fujifilm Superia X-TRA 400: https://vurtnec.github.io/filmmeter-website/film-stocks/fujifilm-superia-400/
+- CineStill 800T: https://vurtnec.github.io/filmmeter-website/film-stocks/cinestill-800t/
+- Harman Phoenix 200: https://vurtnec.github.io/filmmeter-website/film-stocks/harman-phoenix-200/
+- LeKai C200: https://vurtnec.github.io/filmmeter-website/film-stocks/lekai-c200/
+- Kodak Vision3 250D (5207): https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-5207-250d/
+- Kodak Vision3 500T (5219): https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-5219-500t/
+
+### Black & White Films
+- Ilford HP5 Plus 400: https://vurtnec.github.io/filmmeter-website/film-stocks/ilford-hp5-plus/
+- Ilford Delta 400: https://vurtnec.github.io/filmmeter-website/film-stocks/ilford-delta-400/
+- Ilford Delta 100: https://vurtnec.github.io/filmmeter-website/film-stocks/ilford-delta-100/
+
+### Reversal / Slide Films
+- Fujifilm Velvia 50: https://vurtnec.github.io/filmmeter-website/film-stocks/fujifilm-velvia-50/
+- Fujifilm Velvia 100F: https://vurtnec.github.io/filmmeter-website/film-stocks/fujifilm-velvia-100f/
+- Fujifilm Provia 100F: https://vurtnec.github.io/filmmeter-website/film-stocks/fujifilm-provia-100f/
+- Kodak Ektachrome E100: https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-ektachrome-e100/
+- Kodak Ektachrome 100D (5294): https://vurtnec.github.io/filmmeter-website/film-stocks/kodak-5294-100d/
 
 ## Technical Requirements
 
@@ -55,6 +115,9 @@ FilmMeter embraces the aesthetic and principles of traditional darkroom photogra
 ## Links
 
 - Website: https://vurtnec.github.io/filmmeter-website/
+- Features: https://vurtnec.github.io/filmmeter-website/features/
+- Film Stocks: https://vurtnec.github.io/filmmeter-website/film-stocks/
+- Guides: https://vurtnec.github.io/filmmeter-website/guides/
 - Privacy Policy: https://vurtnec.github.io/filmmeter-website/privacy-policy/
 - Support & FAQ: https://vurtnec.github.io/filmmeter-website/support/
 

@@ -565,6 +565,21 @@ a {
     color: $filmmeter-gray-medium;
     line-height: 1.6;
   }
+
+  .feature-link {
+    display: inline-block;
+    margin-top: $spacing-md;
+    color: $filmmeter-red;
+    font-size: $font-size-small;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: darken($filmmeter-red, 10%);
+      text-decoration: underline;
+    }
+  }
 }
 
 // === CODE BLOCKS ===
@@ -917,5 +932,575 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 
   h1, h2, h3 {
     break-after: avoid;
+  }
+}
+
+// ============================================================
+// FILM STOCK PAGES & FEATURE PAGES
+// ============================================================
+
+// === BREADCRUMB ===
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-md 0;
+  font-size: $font-size-small;
+  color: $filmmeter-gray-medium;
+  margin-bottom: $spacing-lg;
+  flex-wrap: wrap;
+
+  a {
+    color: $filmmeter-red;
+    text-decoration: none;
+    font-size: $font-size-small;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .separator {
+    color: $filmmeter-gray-medium;
+    user-select: none;
+  }
+}
+
+// === FILM TYPE BADGES ===
+.film-type-badge {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  border-radius: 20px;
+  font-size: $font-size-caption;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &.color-negative {
+    background-color: rgba(229, 57, 53, 0.1);
+    color: $filmmeter-red;
+    border: 1px solid $filmmeter-red;
+  }
+
+  &.black-and-white {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: $filmmeter-black;
+    border: 1px solid $filmmeter-black;
+  }
+
+  &.slide {
+    background-color: rgba(46, 139, 87, 0.1);
+    color: #2E8B57;
+    border: 1px solid #2E8B57;
+  }
+}
+
+// === DATA SOURCE BADGES ===
+.data-source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 6px;
+  font-size: $font-size-caption;
+  font-weight: 600;
+
+  &.official {
+    background-color: rgba(46, 139, 87, 0.1);
+    color: #2E8B57;
+  }
+
+  &.community {
+    background-color: rgba(229, 57, 53, 0.1);
+    color: $filmmeter-red;
+  }
+
+  &.estimated {
+    background-color: rgba(102, 102, 102, 0.1);
+    color: $filmmeter-gray-medium;
+  }
+
+  &.none {
+    background-color: rgba(102, 102, 102, 0.05);
+    color: lighten($filmmeter-gray-medium, 15%);
+  }
+}
+
+// === FILM STOCKS GRID (Hub Page) ===
+.film-stocks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-lg;
+  margin: $spacing-xl 0;
+}
+
+.film-stock-card {
+  background: $filmmeter-white;
+  border-radius: 12px;
+  padding: $spacing-lg;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  display: block;
+  color: inherit;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+
+    .film-stock-card-name {
+      color: $filmmeter-red;
+    }
+  }
+
+  .film-stock-card-name {
+    font-size: $font-size-subheading;
+    font-weight: 700;
+    margin-bottom: $spacing-xs;
+    color: $filmmeter-black;
+    transition: color 0.2s ease;
+  }
+
+  .film-stock-card-iso {
+    font-size: $font-size-body;
+    color: $filmmeter-gray-medium;
+    font-weight: 600;
+    margin-bottom: $spacing-sm;
+  }
+
+  .film-stock-card-desc {
+    font-size: $font-size-small;
+    color: $filmmeter-gray-medium;
+    line-height: 1.5;
+    margin-top: $spacing-sm;
+  }
+
+  .film-stock-card-header {
+    height: 6px;
+    border-radius: 8px 8px 0 0;
+    margin: -$spacing-lg -$spacing-lg $spacing-md -$spacing-lg;
+  }
+
+  .film-stock-card-body {
+    h3 {
+      font-size: $font-size-subheading;
+      font-weight: 700;
+      margin-bottom: $spacing-xs;
+      color: $filmmeter-black;
+    }
+  }
+
+  .film-stock-card-meta {
+    display: flex;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-small;
+    color: $filmmeter-gray-medium;
+
+    .film-iso {
+      font-weight: 600;
+    }
+
+    .film-process {
+      &::before {
+        content: "·";
+        margin-right: $spacing-xs;
+      }
+    }
+  }
+}
+
+// === FILM STOCK DETAIL PAGE ===
+.film-stock-page {
+  max-width: 800px;
+}
+
+.film-stock-hero {
+  padding: $spacing-xxl 0 $spacing-xl;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: $spacing-xl;
+
+  .film-stock-title {
+    font-size: $font-size-hero;
+    font-weight: 800;
+    margin-bottom: $spacing-md;
+    line-height: 1.1;
+
+    @media screen and (max-width: $breakpoint-md) {
+      font-size: $font-size-title;
+    }
+  }
+
+  .film-stock-manufacturer {
+    font-size: $font-size-subheading;
+    color: $filmmeter-gray-medium;
+    margin-bottom: $spacing-lg;
+  }
+
+  .film-stock-meta {
+    display: flex;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+// === SPECS GRID ===
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: $spacing-md;
+  margin: $spacing-xl 0;
+}
+
+.spec-item {
+  padding: $spacing-md;
+  background: $filmmeter-gray-light;
+  border-radius: 8px;
+  text-align: center;
+
+  .spec-label {
+    font-size: $font-size-caption;
+    color: $filmmeter-gray-medium;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: $spacing-xs;
+  }
+
+  .spec-value {
+    font-size: $font-size-subheading;
+    font-weight: 700;
+    color: $filmmeter-black;
+  }
+}
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+// === RECIPROCITY TABLE ===
+.reciprocity-section {
+  margin: $spacing-xxl 0;
+}
+
+.reciprocity-table-wrapper {
+  overflow-x: auto;
+  margin: $spacing-lg 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+
+    th {
+      background: $filmmeter-black;
+      color: $filmmeter-white;
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-small;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    td {
+      padding: $spacing-sm $spacing-md;
+      text-align: center;
+      font-size: $font-size-small;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    tr:nth-child(even) td {
+      background: $filmmeter-gray-light;
+    }
+
+    tr:hover td {
+      background: rgba(229, 57, 53, 0.04);
+    }
+  }
+}
+
+.reciprocity-formula {
+  background: $filmmeter-gray-light;
+  padding: $spacing-md $spacing-lg;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: $font-size-body;
+  margin: $spacing-md 0;
+  border-left: 3px solid $filmmeter-red;
+}
+
+.reciprocity-note {
+  font-size: $font-size-small;
+  color: $filmmeter-gray-medium;
+  margin-top: $spacing-sm;
+  font-style: italic;
+}
+
+// === RELATED FILMS ===
+.related-films {
+  margin: $spacing-xxl 0;
+
+  .related-films-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+  }
+}
+
+// === APP CTA BANNER ===
+.app-cta-banner {
+  background: $filmmeter-black;
+  color: $filmmeter-white;
+  border-radius: 16px;
+  padding: $spacing-xxl;
+  margin: $spacing-xxl 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: $filmmeter-red;
+  }
+
+  h3 {
+    color: $filmmeter-white;
+    margin-bottom: $spacing-md;
+    border: none;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto $spacing-xl auto;
+  }
+
+  .btn-primary {
+    background: $filmmeter-red;
+    color: $filmmeter-white;
+  }
+}
+
+// === BILINGUAL CONTENT ===
+.bilingual-content {
+  .zh-content {
+    border-left: 3px solid $filmmeter-red;
+    padding-left: $spacing-md;
+    margin-top: $spacing-md;
+    color: $filmmeter-gray-medium;
+    font-size: $font-size-small;
+    line-height: 1.6;
+  }
+}
+
+.zh-subtitle {
+  color: $filmmeter-gray-medium;
+  font-size: $font-size-subheading;
+  margin-top: $spacing-xs;
+}
+
+// === CATEGORY HEADERS ===
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin: $spacing-xxl 0 $spacing-lg 0;
+
+  h2 {
+    margin: 0;
+  }
+
+  .category-count {
+    background: rgba(229, 57, 53, 0.1);
+    color: $filmmeter-red;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: 12px;
+    font-size: $font-size-caption;
+    font-weight: 600;
+  }
+}
+
+// === FEATURE PAGE LAYOUT ===
+.feature-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: $spacing-xxl;
+  align-items: start;
+
+  @media screen and (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-main-content {
+  min-width: 0;
+}
+
+.feature-page-hero {
+  margin-bottom: $spacing-xxl;
+  padding-bottom: $spacing-xl;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: $font-size-hero;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: $spacing-sm;
+
+    @media screen and (max-width: $breakpoint-md) {
+      font-size: $font-size-title;
+    }
+  }
+
+  .feature-subtitle {
+    font-size: $font-size-subheading;
+    color: $filmmeter-gray-medium;
+    margin-top: $spacing-md;
+  }
+}
+
+.feature-content {
+  h2 {
+    margin-top: $spacing-xxl;
+    padding-top: $spacing-lg;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  h3 {
+    margin-top: $spacing-xl;
+  }
+
+  ul, ol {
+    margin-left: $spacing-lg;
+  }
+}
+
+// === FEATURE SIDEBAR ===
+.feature-sidebar {
+  position: sticky;
+  top: 80px;
+
+  @media screen and (max-width: $breakpoint-lg) {
+    position: static;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: $spacing-xl;
+  }
+
+  h4 {
+    font-size: $font-size-small;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $filmmeter-gray-medium;
+    margin-bottom: $spacing-sm;
+    margin-top: $spacing-xl;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .feature-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    a {
+      display: block;
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-small;
+      color: $filmmeter-black;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: $filmmeter-gray-light;
+        color: $filmmeter-red;
+      }
+
+      &.active {
+        background: rgba(229, 57, 53, 0.08);
+        color: $filmmeter-red;
+        font-weight: 600;
+        border-left: 3px solid $filmmeter-red;
+      }
+    }
+  }
+}
+
+// === FEATURE DETAIL SECTIONS ===
+.feature-detail-section {
+  margin: $spacing-xl 0;
+  padding: $spacing-lg;
+  background: $filmmeter-gray-light;
+  border-radius: 12px;
+  border-left: 3px solid $filmmeter-red;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+// === RELATED LINKS GRID ===
+.related-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-md;
+  margin: $spacing-xl 0;
+
+  a {
+    display: block;
+    padding: $spacing-lg;
+    background: $filmmeter-gray-light;
+    border-radius: 8px;
+    text-decoration: none;
+    color: $filmmeter-black;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $filmmeter-red;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    strong {
+      display: block;
+      margin-bottom: $spacing-xs;
+    }
+
+    span {
+      font-size: $font-size-small;
+      color: $filmmeter-gray-medium;
+    }
+  }
+}
+
+// === GUIDE PAGE ENHANCEMENTS ===
+.guide-summary-table {
+  margin: $spacing-xl 0;
+
+  table {
+    width: 100%;
+
+    a {
+      color: $filmmeter-red;
+    }
   }
 }
